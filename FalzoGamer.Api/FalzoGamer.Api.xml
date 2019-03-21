@@ -1,0 +1,651 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>FalzoGamer.Api</name>
+    </assembly>
+    <members>
+        <member name="T:FalzoGamer.Api.AutoMapper.AutoMapperConfig">
+            <summary>
+            Classe AutoMapperConfig
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.AutoMapper.AutoMapperConfig.RegisterMappings">
+            <summary>
+            Método RegisterMappings
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.AutoMapper.DomainToDTOModelMappingProfile">
+            <summary>
+            Método DomainToDTOModelMappingProfile
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.AutoMapper.DomainToDTOModelMappingProfile.#ctor">
+            <summary>
+            Método que mapeia do Domínio para os DTOs
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.AutoMapper.DTOModelToDomainMappingProfile">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.AutoMapper.DTOModelToDomainMappingProfile.#ctor">
+            <summary>
+            /// <summary>
+            Método que mapeia dos DTOs para o Domínio
+            </summary>
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.Controllers.CategoriaController">
+            <summary>
+            Controller CategoriaController
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.#ctor(FalzoGamer.Application.Interfaces.ICategoriaAppServico)">
+            <summary>
+            Construtor CategoriaController que gera a interface _categoriaAppServico
+            </summary>
+            <param name="categoriaAppServico"></param>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.Listar">
+            <summary>
+            Listar todos as categorias
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Obtém a lista completa de categorias da Api
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.BuscarPorId(System.Int32)">
+            <summary>
+            Listar categoria pelo Id
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Obtém a categoria através do seu Id
+            </remarks>
+            <param name="id">Id da categoria</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.Inserir(FalzoGamer.Api.DTOs.CategoriaDTO)">
+            <summary>
+            Inserir categoria
+            </summary>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Insere uma nova categoria na base
+            </remarks>
+            <param name="categoriaDTO">Objeto da categoria</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.Atualizar(FalzoGamer.Api.DTOs.CategoriaDTO)">
+            <summary>
+            Atualizar categoria
+            </summary>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Atualiza a categoria na base
+            </remarks>
+            <param name="categoriaDTO">Objeto da categoria</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.Excluir(System.Int32)">
+            <summary>
+            Excluir categoria
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Exclui a categoria da base
+            </remarks>
+            <param name="id">Id da categoria</param>
+            <returns></returns>
+        </member>
+        <member name="T:FalzoGamer.Api.Controllers.ProdutoController">
+            <summary>
+            Controller Produto Controller
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.#ctor(FalzoGamer.Application.Interfaces.IProdutoAppServico)">
+            <summary>
+            Construtor ProdutoController que gera a interface _produtoAppServico
+            </summary>
+            <param name="produtoAppServico"></param>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.Listar">
+            <summary>
+            Listar todos os produtos
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Obtém a lista completa de produtos da Api
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.BuscarPorId(System.Int32)">
+            <summary>
+            Listar produto pelo Id
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Obtém o produto através do seu Id
+            </remarks>
+            <param name="id">Id do produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.Inserir(FalzoGamer.Api.DTOs.ProdutoDTO)">
+            <summary>
+            Inserir produto
+            </summary>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Insere um novo produto na base
+            </remarks>
+            <param name="produtoDTO">Objeto do produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.Atualizar(FalzoGamer.Api.DTOs.ProdutoDTO)">
+            <summary>
+            Atualizar produto
+            </summary>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Atualiza o produto na base
+            </remarks>
+            <param name="produtoDTO">Objeto do produto</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.Excluir(System.Int32)">
+            <summary>
+            Excluir produto
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Exclui o produto da base
+            </remarks>
+            <param name="id">Id do produto</param>
+            <returns></returns>
+        </member>
+        <member name="T:FalzoGamer.Api.Controllers.UsuarioController">
+            <summary>
+            Controller UsuarioController
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.#ctor(FalzoGamer.Application.Interfaces.IUsuarioAppServico)">
+            <summary>
+            Construtor UsuarioController que gera a interface _usuarioAppServico
+            </summary>
+            <param name="usuarioAppServico"></param>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.Listar">
+            <summary>
+            Listar todos os usuários
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Obtém a lista completa de usuários da Api
+            </remarks>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.BuscarPorId(System.Int32)">
+            <summary>
+            Listar usuário pelo Id
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Obtém o usuário através do seu Id
+            </remarks>
+            <param name="id">Id do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.Inserir(FalzoGamer.Api.DTOs.UsuarioDTO)">
+            <summary>
+            Inserir usuário
+            </summary>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Insere um novo usuário na base
+            </remarks>
+            <param name="usuarioDTO">Objeto do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.Atualizar(FalzoGamer.Api.DTOs.UsuarioDTO)">
+            <summary>
+            Atualizar usuário
+            </summary>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Atualiza o usuário na base
+            </remarks>
+            <param name="usuarioDTO">Objeto do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.Excluir(System.Int32)">
+            <summary>
+            Excluir usuário
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Exclui o usuário da base
+            </remarks>
+            <param name="id">Id do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.CategoriaDTO">
+            <summary>
+            Classe DTO de Categoria
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CategoriaDTO.Id">
+            <summary>
+            Id da categoria
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CategoriaDTO.Nome">
+            <summary>
+            Nome da categoria
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CategoriaDTO.Novo">
+            <summary>
+            Indica se a categoria é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CategoriaDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CategoriaDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CategoriaDTO.Produtos">
+            <summary>
+            Lista de objetos de relacionamento produto
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.CidadeDTO">
+            <summary>
+            Classe DTO de Cidade
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.Id">
+            <summary>
+            Id da cidade
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.EstadoId">
+            <summary>
+            Id da chave estrangeira da entidade estado
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.Nome">
+            <summary>
+            Nome da cidade
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.Novo">
+            <summary>
+            Indica se a cidade é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.CidadeDTO.Estado">
+            <summary>
+            Objeto de relacionamento estado
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.EnderecoDTO">
+            <summary>
+            Classe DTO de Endereço
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Id">
+            <summary>
+            Id do endereço
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.UsuarioId">
+            <summary>
+            Id da chave estrangeira da entidade usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Rua">
+            <summary>
+            Nome da rua
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Numero">
+            <summary>
+            Número do endereço
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Complemento">
+            <summary>
+            Complemento do endereço
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Bairro">
+            <summary>
+            Bairro pertencente ao endereço
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Novo">
+            <summary>
+            Indica se o endereço é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EnderecoDTO.Usuario">
+            <summary>
+            Objeto de relacionamento usuário
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.EstadoDTO">
+            <summary>
+            Classe DTO de Estado
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Id">
+            <summary>
+            Id do estado
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Nome">
+            <summary>
+            Nome do estado
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Sigla">
+            <summary>
+            Sigla do estado
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Novo">
+            <summary>
+            Indica se a categoria é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.EstadoDTO.Cidades">
+            <summary>
+            Lista de objetos de relacionamento cidade
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.ProdutoDTO">
+            <summary>
+            Classe DTO de Produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Id">
+            <summary>
+            Id do produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.CategoriaId">
+            <summary>
+            Id da chave estrangeira da entidade categoria
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Nome">
+            <summary>
+            Nome do produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Preco">
+            <summary>
+            Preço do produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Marca">
+            <summary>
+            Marca do produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Descricao">
+            <summary>
+            Descrição do produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Tipo">
+            <summary>
+            Tipo de produto
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Novo">
+            <summary>
+            Indica se a categoria é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.ProdutoDTO.Categoria">
+            <summary>
+            Objeto de relacionamento categoria
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.UsuarioDTO">
+            <summary>
+            Classe DTO de Usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Id">
+            <summary>
+            Id do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Nome">
+            <summary>
+            Nome do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Sexo">
+            <summary>
+            Sexo do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Email">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Login">
+            <summary>
+            Login do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Senha">
+            <summary>
+            Senha do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Novo">
+            <summary>
+            Indica se o usuário é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Endereco">
+            <summary>
+            Objeto de relacionamento endereço
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Cidade">
+            <summary>
+            Objeto de relacionamento cidade
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.UsuarioDTO.Vendedor">
+            <summary>
+            Objeto de relacionamento vendedor
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.DTOs.VendedorDTO">
+            <summary>
+            Classe DTO de Vendedor
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Id">
+            <summary>
+            Id do vendedor
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.UsuarioId">
+            <summary>
+            Id da chave estrangeira da entidade usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Cpf">
+            <summary>
+            CPF do vendedor
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Telefone">
+            <summary>
+            Telefone do vendedor
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Celular">
+            <summary>
+            Celular do vendedor
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Novo">
+            <summary>
+            Indica se a categoria é um novo registro
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Created">
+            <summary>
+            Data de criação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Modified">
+            <summary>
+            Data de modificação
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.DTOs.VendedorDTO.Usuario">
+            <summary>
+            Objeto de relacionamento usuário
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.Models.ObjectResponse">
+            <summary>
+            Classe ObjectResponse
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.ObjectResponse.Status">
+            <summary>
+            Código de Status da Response
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.ObjectResponse.Message">
+            <summary>
+            Mensagem de retorno
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.Program">
+            <summary>
+            Classe Program
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.Program.Main(System.String[])">
+            <summary>
+            Método Main
+            </summary>
+            <param name="args"></param>
+        </member>
+        <member name="M:FalzoGamer.Api.Program.CreateWebHostBuilder(System.String[])">
+            <summary>
+            Método CreateWebHostBuilder
+            </summary>
+            <param name="args"></param>
+            <returns></returns>
+        </member>
+        <member name="T:FalzoGamer.Api.Startup">
+            <summary>
+            Classe Startup
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            Construtor com interface IConfiguration
+            </summary>
+            <param name="configuration"></param>
+        </member>
+        <member name="P:FalzoGamer.Api.Startup.Configuration">
+            <summary>
+            Atributo IConfiguration
+            </summary>
+        </member>
+        <member name="M:FalzoGamer.Api.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Método ConfigureServices para configuração de serviços da aplicação
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="M:FalzoGamer.Api.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Método Configure para configurações das Requisições Http da aplicação
+            </summary>
+            <param name="app"></param>
+            <param name="env"></param>
+        </member>
+    </members>
+</doc>
