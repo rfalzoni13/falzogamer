@@ -6,6 +6,8 @@ namespace FalzoGamer.Domain.Interfaces
 {
     public interface IFalzoGamerContext : IDisposable
     {
+        IQueryable<Acesso> Acessos { get; }
+
         IQueryable<Usuario> Usuarios { get; }
 
         IQueryable<Endereco> Enderecos { get; }
@@ -15,6 +17,8 @@ namespace FalzoGamer.Domain.Interfaces
         IQueryable<Estado> Estados { get; }
 
         IQueryable<Vendedor> Vendedores { get; }
+
+        IQueryable<Venda> Vendas { get; }
 
         IQueryable<Produto> Produtos { get; }
 

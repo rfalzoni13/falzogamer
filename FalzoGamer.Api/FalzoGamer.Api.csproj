@@ -28,6 +28,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FalzoGamer.Cross\FalzoGamer.Cross.csproj" />
     <ProjectReference Include="..\FalzoGamer.Infra.IoC\FalzoGamer.Infra.IoC.csproj" />
   </ItemGroup>
 

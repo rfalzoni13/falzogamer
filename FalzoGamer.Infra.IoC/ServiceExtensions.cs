@@ -24,16 +24,19 @@ namespace FalzoGamer.Infra.IoC
             services.AddTransient<IUsuarioRepositorio, UsuarioRepositorio>();
             services.AddTransient<IProdutoRepositorio, ProdutoRepositorio>();
             services.AddTransient<ICategoriaRepositorio, CategoriaRepositorio>();
+            services.AddTransient<IAcessoRepositorio, AcessoRepositorio>();
 
             services.AddTransient(typeof(IServicoBase<>), typeof(ServicoBase<>));
             services.AddTransient<IUsuarioServico, UsuarioServico>();
             services.AddTransient<IProdutoServico, ProdutoServico>();
             services.AddTransient<ICategoriaServico, CategoriaServico>();
+            services.AddTransient<IAcessoServico, AcessoServico>();
 
             services.AddTransient(typeof(IBaseAppServico<>), typeof(BaseAppServico<>));
             services.AddTransient<IUsuarioAppServico, UsuarioAppServico>();
             services.AddTransient<IProdutoAppServico, ProdutoAppServico>();
             services.AddTransient<ICategoriaAppServico, CategoriaAppServico>();
+            services.AddTransient<IAcessoAppServico, AcessoAppServico>();
 
             services.AddTransient<IFalzoGamerContext, FalzoGamerContext>();
             return services;

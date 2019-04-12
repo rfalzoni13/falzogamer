@@ -12,13 +12,15 @@ namespace FalzoGamer.Infra.Data.Configurations
 
             builder.HasKey(c => c.Id);
 
+            builder.Property(c => c.EstadoId).IsRequired();
+
             builder.Property(c => c.Nome).HasMaxLength(220).IsRequired();
 
             builder.Property(c => c.Novo).IsRequired();
 
             builder.Property(c => c.Created).IsRequired();
 
-            builder.HasOne(c => c.Estado).WithMany(e => e.Cidades).HasForeignKey(c => c.Id).OnDelete(DeleteBehavior.Cascade);
+            builder.HasOne(c => c.Estado).WithMany(e => e.Cidades).HasForeignKey(c => c.EstadoId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

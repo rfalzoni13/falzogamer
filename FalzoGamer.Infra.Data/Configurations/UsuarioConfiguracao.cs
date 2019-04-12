@@ -12,6 +12,8 @@ namespace FalzoGamer.Infra.Data.Configurations
 
             builder.HasKey(u => u.Id);
 
+            builder.Property(u => u.AcessoId).IsRequired();
+
             builder.Property(u => u.Nome).HasMaxLength(220).IsRequired();
 
             builder.Property(u => u.Sexo).HasMaxLength(100).IsRequired();
@@ -20,11 +22,11 @@ namespace FalzoGamer.Infra.Data.Configurations
 
             builder.Property(u => u.Login).HasMaxLength(100).IsRequired();
 
-            builder.Property(u => u.Senha).HasMaxLength(500).IsRequired();
-
             builder.Property(u => u.Novo).IsRequired();
 
             builder.Property(u => u.Created).IsRequired();
+
+            builder.HasOne(u => u.Acesso).WithOne(a => a.Usuario).HasForeignKey<Usuario>(u => u.AcessoId).OnDelete(DeleteBehavior.Cascade);
         }
     }
 }

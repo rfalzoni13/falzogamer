@@ -1,12 +1,14 @@
 ﻿using AutoMapper;
-using FalzoGamer.Api.DTOs;
 using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
+using FalzoGamer.Cross.Authentication;
 using FalzoGamer.Domain.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Net;
+using System.Threading.Tasks;
 
 namespace FalzoGamer.Api.Controllers
 {
@@ -18,9 +20,10 @@ namespace FalzoGamer.Api.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioAppServico _usuarioAppServico;
-
+        
         /// <summary>
-        /// Construtor UsuarioController que gera a interface _usuarioAppServico
+        /// Construtor UsuarioController que gera as interfaces _usuarioAppServico,
+        /// _acessoAppServico e os Identity Managers
         /// </summary>
         /// <param name="usuarioAppServico"></param>
         public UsuarioController(IUsuarioAppServico usuarioAppServico)
@@ -112,28 +115,30 @@ namespace FalzoGamer.Api.Controllers
         /// <summary>
         /// Inserir usuário
         /// </summary>
+        /// <response code="404">Not Found</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
         /// Insere um novo usuário na base
         /// </remarks>
-        /// <param name="usuarioDTO">Objeto do usuário</param>
+        /// <param name="usuarioModel">Objeto do usuário</param>
         /// <returns></returns>
         //POST api/usuario/Inserir
         [HttpPost]
         [Route("Inserir")]
-        public IActionResult Inserir([FromBody] UsuarioDTO usuarioDTO)
+        public IActionResult Inserir([FromBody] UsuarioModel usuarioModel)
         {   
             try
             {
-                usuarioDTO.Created = DateTime.Now;
+                usuarioModel.Created = DateTime.Now;
 
-                usuarioDTO.Novo = true;
+                usuarioModel.Novo = true;
 
-                var usuario = Mapper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+                var usuario = Mapper.Map<UsuarioModel, Usuario>(usuarioModel);
 
                 _usuarioAppServico.Adicionar(usuario);
 
                 return Ok("Usuário inserido com sucesso!");
+
             }
             catch(Exception ex)
             {
@@ -154,20 +159,20 @@ namespace FalzoGamer.Api.Controllers
         /// <remarks>
         /// Atualiza o usuário na base
         /// </remarks>
-        /// <param name="usuarioDTO">Objeto do usuário</param>
+        /// <param name="usuarioModel">Objeto do usuário</param>
         /// <returns></returns>
         //PUT api/usuario/Atualizar
         [HttpPut]
         [Route("Atualizar")]
-        public IActionResult Atualizar([FromBody] UsuarioDTO usuarioDTO)
+        public IActionResult Atualizar([FromBody] UsuarioModel usuarioModel)
         {
             try
             {
-                usuarioDTO.Modified = DateTime.Now;
+                usuarioModel.Modified = DateTime.Now;
 
-                usuarioDTO.Novo = false;
+                usuarioModel.Novo = false;
 
-                var usuario = Mapper.Map<UsuarioDTO, Usuario>(usuarioDTO);
+                var usuario = Mapper.Map<UsuarioModel, Usuario>(usuarioModel);
 
                 _usuarioAppServico.Atualizar(usuario);
 

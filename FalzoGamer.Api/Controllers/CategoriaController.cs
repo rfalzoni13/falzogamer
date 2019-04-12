@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FalzoGamer.Api.DTOs;
+using FalzoGamer.Api.Models;
 using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
 using FalzoGamer.Domain.Entities;
@@ -122,20 +122,20 @@ namespace FalzoGamer.Api.Controllers
         /// <remarks>
         /// Insere uma nova categoria na base
         /// </remarks>
-        /// <param name="categoriaDTO">Objeto da categoria</param>
+        /// <param name="categoriaModel">Objeto da categoria</param>
         /// <returns></returns>
         //POST api/categoria/Inserir
         [HttpPost]
         [Route("Inserir")]
-        public IActionResult Inserir([FromBody] CategoriaDTO categoriaDTO)
+        public IActionResult Inserir([FromBody] CategoriaModel categoriaModel)
         {
             try
             {
-                categoriaDTO.Created = DateTime.Now;
+                categoriaModel.Created = DateTime.Now;
 
-                categoriaDTO.Novo = true;
+                categoriaModel.Novo = true;
 
-                var categoria = Mapper.Map<CategoriaDTO, Categoria>(categoriaDTO);
+                var categoria = Mapper.Map<CategoriaModel, Categoria>(categoriaModel);
 
                 _categoriaAppServico.Adicionar(categoria);
 
@@ -160,20 +160,20 @@ namespace FalzoGamer.Api.Controllers
         /// <remarks>
         /// Atualiza a categoria na base
         /// </remarks>
-        /// <param name="categoriaDTO">Objeto da categoria</param>
+        /// <param name="categoriaModel">Objeto da categoria</param>
         /// <returns></returns>
         //PUT api/categoria/Atualizar
         [HttpPut]
         [Route("Atualizar")]
-        public IActionResult Atualizar([FromBody] CategoriaDTO categoriaDTO)
+        public IActionResult Atualizar([FromBody] CategoriaModel categoriaModel)
         {
             try
             {
-                categoriaDTO.Modified = DateTime.Now;
+                categoriaModel.Modified = DateTime.Now;
 
-                categoriaDTO.Novo = false;
+                categoriaModel.Novo = false;
 
-                var categoria = Mapper.Map<CategoriaDTO, Categoria>(categoriaDTO);
+                var categoria = Mapper.Map<CategoriaModel, Categoria>(categoriaModel);
 
                 _categoriaAppServico.Atualizar(categoria);
 

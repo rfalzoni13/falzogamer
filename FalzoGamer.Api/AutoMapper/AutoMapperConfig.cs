@@ -14,8 +14,8 @@ namespace FalzoGamer.Api.AutoMapper
         {
             Mapper.Initialize(x =>
             {
-                x.AddProfile<DomainToDTOModelMappingProfile>();
-                x.AddProfile<DTOModelToDomainMappingProfile>();
+                x.AddProfile<DomainToModelMappingProfile>();
+                x.AddProfile<ModelToDomainMappingProfile>();
             });
         }
 

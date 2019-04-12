@@ -4,6 +4,8 @@ namespace FalzoGamer.Domain.Entities
 {
     public class Usuario : EntityBase
     {
+        public int AcessoId { get; set; }
+
         public string Nome { get; set; }
 
         public string Sexo { get; set; }
@@ -12,12 +14,12 @@ namespace FalzoGamer.Domain.Entities
 
         public string Login { get; set; }
 
-        public string Senha { get; set; }
-
         public virtual Endereco Endereco { get; set; }
 
         public virtual Cidade Cidade { get; set; }
 
         public virtual Vendedor Vendedor { get; set; }
+
+        public virtual Acesso Acesso { get; set; }
     }
 }

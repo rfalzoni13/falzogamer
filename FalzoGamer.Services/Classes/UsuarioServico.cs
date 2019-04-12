@@ -13,17 +13,5 @@ namespace FalzoGamer.Services.Classes
         {
             _usuarioRepositorio = usuarioRepositorio;
         }
-
-        public override void Adicionar(Usuario obj)
-        {
-            obj.Senha = BCrypt.HashPassword(obj.Senha, BCrypt.GenerateSalt());
-            base.Adicionar(obj);
-        }
-
-        public override void Atualizar(Usuario obj)
-        {
-            obj.Senha = BCrypt.HashPassword(obj.Senha, BCrypt.GenerateSalt());
-            base.Atualizar(obj);
-        }
     }
 }

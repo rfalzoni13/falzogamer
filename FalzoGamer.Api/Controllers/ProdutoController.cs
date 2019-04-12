@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using FalzoGamer.Api.DTOs;
+using FalzoGamer.Api.Models;
 using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
 using FalzoGamer.Domain.Entities;
@@ -122,20 +122,20 @@ namespace FalzoGamer.Api.Controllers
         /// <remarks>
         /// Insere um novo produto na base
         /// </remarks>
-        /// <param name="produtoDTO">Objeto do produto</param>
+        /// <param name="produtoModel">Objeto do produto</param>
         /// <returns></returns>
         //POST api/produto/Inserir
         [HttpPost]
         [Route("Inserir")]
-        public IActionResult Inserir([FromBody] ProdutoDTO produtoDTO)
+        public IActionResult Inserir([FromBody] ProdutoModel produtoModel)
         {
             try
             {
-                produtoDTO.Created = DateTime.Now;
+                produtoModel.Created = DateTime.Now;
 
-                produtoDTO.Novo = true;
+                produtoModel.Novo = true;
 
-                var produto = Mapper.Map<ProdutoDTO, Produto>(produtoDTO);
+                var produto = Mapper.Map<ProdutoModel, Produto>(produtoModel);
 
                 _produtoAppServico.Adicionar(produto);
 
@@ -160,20 +160,20 @@ namespace FalzoGamer.Api.Controllers
         /// <remarks>
         /// Atualiza o produto na base
         /// </remarks>
-        /// <param name="produtoDTO">Objeto do produto</param>
+        /// <param name="produtoModel">Objeto do produto</param>
         /// <returns></returns>
         //PUT api/produto/Atualizar
         [HttpPut]
         [Route("Atualizar")]
-        public IActionResult Atualizar([FromBody] ProdutoDTO produtoDTO)
+        public IActionResult Atualizar([FromBody] ProdutoModel produtoModel)
         {
             try
             {
-                produtoDTO.Modified = DateTime.Now;
+                produtoModel.Modified = DateTime.Now;
 
-                produtoDTO.Novo = false;
+                produtoModel.Novo = false;
 
-                var produto = Mapper.Map<ProdutoDTO, Produto>(produtoDTO);
+                var produto = Mapper.Map<ProdutoModel, Produto>(produtoModel);
 
                 _produtoAppServico.Atualizar(produto);
 
