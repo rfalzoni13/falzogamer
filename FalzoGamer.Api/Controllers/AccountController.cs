@@ -1,6 +1,8 @@
-﻿using FalzoGamer.Api.Models;
+﻿using AutoMapper;
+using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
 using FalzoGamer.Cross.Authentication;
+using FalzoGamer.Domain.Entities;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -21,6 +23,7 @@ namespace FalzoGamer.Api.Controllers
     public class AccountController : ControllerBase
     {
         private readonly IAcessoAppServico _acessoAppServico;
+        private readonly IUsuarioAppServico _usuarioAppServico;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
@@ -33,17 +36,20 @@ namespace FalzoGamer.Api.Controllers
         /// <param name="userManager"></param>
         /// <param name="roleManager"></param>
         /// <param name="acessoAppServico"></param>
+        /// <param name="usuarioAppServico"></param>
         /// <param name="signInManager"></param>
         /// <param name="tokenConfigurations"></param>
         /// <param name="signingConfigurations"></param>
         public AccountController(UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager, IAcessoAppServico acessoAppServico,
-            SignInManager<ApplicationUser> signInManager, TokenConfigurations tokenConfigurations,
+            IUsuarioAppServico usuarioAppServico, SignInManager<ApplicationUser> signInManager, 
+            TokenConfigurations tokenConfigurations,
             SigningConfigurations signingConfigurations)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _acessoAppServico = acessoAppServico;
+            _usuarioAppServico = usuarioAppServico;
             _signInManager = signInManager;
             _tokenConfigurations = tokenConfigurations;
             _signingConfigurations = signingConfigurations;
@@ -60,8 +66,9 @@ namespace FalzoGamer.Api.Controllers
         /// </remarks>
         /// <param name="usuarioModel">Objeto do usuário</param>
         /// <returns></returns>
-
-        public async Task<ActionResult> Register(UsuarioModel usuarioModel)
+        [HttpPost]
+        [Route("Registrar")]
+        public async Task<ActionResult> Registrar(UsuarioModel usuarioModel)
         {
             try
             {
@@ -106,9 +113,28 @@ namespace FalzoGamer.Api.Controllers
                             ModelState.AddModelError(string.Empty, error.Description);
                         }
                     }
-
-                    if(ModelState.IsValid)
+                    if(!string.IsNullOrEmpty(usuarioModel.Senha))
                     {
+                        result = await InserirSenha(user, usuarioModel.Senha);
+                        if (!result.Succeeded)
+                        {
+                            foreach (var error in result.Errors)
+                            {
+                                ModelState.AddModelError(string.Empty, error.Description);
+                            }
+                        }
+                    }
+
+                    if (ModelState.IsValid)
+                    {
+                        usuarioModel.Created = DateTime.Now;
+
+                        usuarioModel.Novo = true;
+
+                        var usuario = Mapper.Map<UsuarioModel, Usuario>(usuarioModel);
+
+                        _usuarioAppServico.Adicionar(usuario);
+
                         return Ok("Usuário inserido com sucesso!");
                     }
                 }
@@ -127,17 +153,18 @@ namespace FalzoGamer.Api.Controllers
         }
 
         /// <summary>
-        /// Token
+        /// Gerar Token
         /// </summary>
         /// <response code="404">Not Found</response>
-        /// <response code="401">Unauthorized</response>
+        /// <response code="403">Forbidden</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
-        /// Gerar novo Token
+        /// Gera novo Token
         /// </remarks>
         /// <param name="model">Objeto de login</param>
         /// <returns></returns>
-
+        [HttpPost]
+        [Route("Token")]
         public async Task<ActionResult> Token(LoginModel model)
         {
             try
@@ -177,16 +204,18 @@ namespace FalzoGamer.Api.Controllers
 
                             var token = handler.WriteToken(securityToken);
 
-                            return Ok(new {
-                                authenticated = true,
-                                created = Created.ToString("dd/MM/yyyy HH:mm:ss"),
-                                expiration = Expired.ToString("dd/MM/yyyy HH:mm:ss"),
-                                accessToken = token
-                            });
+                            var response = new TokenResponse
+                            {
+                                AcessToken = token,
+                                Created = Created.ToString("dd/MM/yyyy HH:mm:ss"),
+                                Expiration = Expired.ToString("dd/MM/yyyy HH:mm:ss")
+                            };
+
+                            return Ok(response);
                         }
                         else
                         {
-                            return Unauthorized();
+                            return Forbid("Login ou senha incorretos");
                         }
                     }
                     else
@@ -212,7 +241,6 @@ namespace FalzoGamer.Api.Controllers
             }
         }
 
-
         /// <summary>
         /// Registrar usuário
         /// </summary>
@@ -227,6 +255,30 @@ namespace FalzoGamer.Api.Controllers
             if (user != null)
             {
                 var result = await _userManager.CreateAsync(user);
+
+                return result;
+            }
+            else
+            {
+                throw new NullReferenceException("Parâmetros nulos!");
+            }
+        }
+
+        /// <summary>
+        /// Inserir senha
+        /// </summary>
+        /// <remarks>
+        /// Insere uma nova senha para o usuário na base Identity
+        /// </remarks>
+        /// <param name="user">Objeto ApplicationUser</param>
+        /// <param name="senha">String da senha</param>
+        /// <returns></returns>
+        [NonAction]
+        private async Task<IdentityResult> InserirSenha(ApplicationUser user, string senha)
+        {
+            if (user != null)
+            {
+                var result = await _userManager.AddPasswordAsync(user, senha);
 
                 return result;
             }

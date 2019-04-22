@@ -1,0 +1,13 @@
+{
+  "name": "FalzoGamer.Admin",
+  "private": true,
+  "dependencies": {
+    "jQuery": "3.3.1",
+    "jquery-validation": "1.16.0",
+    "bootstrap": "v3.3.7",
+    "admin-lte": "adminlte#v2.4.1"
+  },
+  "resolutions": {
+    "jquery": ">=1.8"
+  }
+}

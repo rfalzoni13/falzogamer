@@ -14,6 +14,7 @@ namespace FalzoGamer.Api.AutoMapper
         /// </summary>
         public DomainToModelMappingProfile()
         {
+            CreateMap<Acesso, AcessoModel>();
             CreateMap<Usuario, UsuarioModel>();
             CreateMap<Endereco, EnderecoModel>();
             CreateMap<Cidade, CidadeModel>();

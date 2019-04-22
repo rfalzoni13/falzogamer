@@ -1,0 +1,62 @@
+﻿@page
+@model RegisterModel
+@{
+    ViewData["Title"] = "Registre-se";
+    Layout = "/Views/Shared/_LayoutRegister.cshtml";
+}
+
+<div class="register-box">
+    <div class="register-logo">
+        <a asp-action="Home" asp-controller="Index"><b>@ViewData["Title"]</b></a>
+    </div>
+
+    <div class="register-box-body">
+        <p class="login-box-msg">Cadastre uma nova conta</p>
+
+        <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+            <div class="form-group has-feedback">
+                <input asp-for="Input.Name" class="form-control" placeholder="Nome completo">
+                <span class="glyphicon glyphicon-user form-control-feedback"></span>
+                <span asp-validation-for="Input.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input asp-for="Input.Email" class="form-control" placeholder="Email">
+                <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+                <span asp-validation-for="Input.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input asp-for="Input.Password" class="form-control" placeholder="Senha">
+                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+                <span asp-validation-for="Input.Password" class="text-danger"></span>
+            </div>
+            <div class="form-group has-feedback">
+                <input asp-for="Input.ConfirmPassword" class="form-control" placeholder="Confirme a senha">
+                <span class="glyphicon glyphicon-log-in form-control-feedback"></span>
+                <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
+            </div>
+                <button type="submit" class="btn btn-primary btn-block btn-flat">Cadastrar</button>
+        </form>
+
+        <br />
+
+        @*<div class="social-auth-links text-center">
+            <p>- OR -</p>
+            <a href="#" class="btn btn-block btn-social btn-facebook btn-flat">
+                <i class="fa fa-facebook"></i> Sign up using
+                Facebook
+            </a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat">
+                <i class="fa fa-google-plus"></i> Sign up using
+                Google+
+            </a>
+        </div>*@
+
+        <a asp-page="./Login" class="text-center">Já possui cadastro?</a>
+    </div>
+    <!-- /.form-box -->
+</div>
+<!-- /.register-box -->
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

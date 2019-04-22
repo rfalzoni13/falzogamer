@@ -39,6 +39,86 @@
             Controller AccountController
             </summary>
         </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{FalzoGamer.Cross.Authentication.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},FalzoGamer.Application.Interfaces.IAcessoAppServico,FalzoGamer.Application.Interfaces.IUsuarioAppServico,Microsoft.AspNetCore.Identity.SignInManager{FalzoGamer.Cross.Authentication.ApplicationUser},FalzoGamer.Cross.Authentication.TokenConfigurations,FalzoGamer.Cross.Authentication.SigningConfigurations)">
+            <summary>
+            Construtor BaseController que gera as interfaces _userManager e _roleManager
+            </summary>
+            <param name="userManager"></param>
+            <param name="roleManager"></param>
+            <param name="acessoAppServico"></param>
+            <param name="usuarioAppServico"></param>
+            <param name="signInManager"></param>
+            <param name="tokenConfigurations"></param>
+            <param name="signingConfigurations"></param>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.Registrar(FalzoGamer.Api.Models.UsuarioModel)">
+            <summary>
+            Register User
+            </summary>
+            <response code="400">Bad Request</response>
+            <response code="404">Not Found</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Insere um novo usuário na base Identity
+            </remarks>
+            <param name="usuarioModel">Objeto do usuário</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.Token(FalzoGamer.Api.Models.LoginModel)">
+            <summary>
+            Gerar Token
+            </summary>
+            <response code="404">Not Found</response>
+            <response code="403">Forbidden</response>
+            <response code="500">Internal Server Error</response>
+            <remarks>
+            Gera novo Token
+            </remarks>
+            <param name="model">Objeto de login</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.RegistrarUsuario(FalzoGamer.Cross.Authentication.ApplicationUser)">
+            <summary>
+            Registrar usuário
+            </summary>
+            <remarks>
+            Registra um novo usuário na base Identity
+            </remarks>
+            <param name="user">Objeto ApplicationUser</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.InserirSenha(FalzoGamer.Cross.Authentication.ApplicationUser,System.String)">
+            <summary>
+            Inserir senha
+            </summary>
+            <remarks>
+            Insere uma nova senha para o usuário na base Identity
+            </remarks>
+            <param name="user">Objeto ApplicationUser</param>
+            <param name="senha">String da senha</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.AssociarRole(FalzoGamer.Cross.Authentication.ApplicationUser,Microsoft.AspNetCore.Identity.IdentityRole)">
+            <summary>
+            Associar role
+            </summary>
+            <remarks>
+            Associa uma role ao usuário
+            </remarks>
+            <param name="user">Objeto ApplicationUser</param>
+            <param name="role">Objeto IdentityRole</param>
+            <returns></returns>
+        </member>
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.RegistrarRole(System.String)">
+            <summary>
+            Registrar role
+            </summary>
+            <remarks>
+            Registra uma nova role na base Identity
+            </remarks>
+            <param name="name">Nome da role</param>
+            <returns></returns>
+        </member>
         <member name="T:FalzoGamer.Api.Controllers.AcessoController">
             <summary>
             Controller AcessoController
@@ -514,6 +594,21 @@
             Lista de objetos de relacionamento cidade
             </summary>
         </member>
+        <member name="T:FalzoGamer.Api.Models.LoginModel">
+            <summary>
+            Classe Model LoginModel
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.LoginModel.UserName">
+            <summary>
+            Login do usuário
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.LoginModel.Password">
+            <summary>
+            Senha do usuário
+            </summary>
+        </member>
         <member name="T:FalzoGamer.Api.Models.ObjectResponse">
             <summary>
             Classe ObjectResponse
@@ -587,6 +682,26 @@
         <member name="P:FalzoGamer.Api.Models.ProdutoModel.Categoria">
             <summary>
             Objeto de relacionamento categoria
+            </summary>
+        </member>
+        <member name="T:FalzoGamer.Api.Models.TokenResponse">
+            <summary>
+            Objeto TokenResponse
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.TokenResponse.AcessToken">
+            <summary>
+            Token de acesso
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.TokenResponse.Created">
+            <summary>
+            Data de criação do Token
+            </summary>
+        </member>
+        <member name="P:FalzoGamer.Api.Models.TokenResponse.Expiration">
+            <summary>
+            Data de expiração do Token
             </summary>
         </member>
         <member name="T:FalzoGamer.Api.Models.UsuarioModel">

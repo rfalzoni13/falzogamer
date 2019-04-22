@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using FalzoGamer.Api.Models;
-using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
 using FalzoGamer.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;

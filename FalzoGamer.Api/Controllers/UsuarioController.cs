@@ -1,20 +1,19 @@
 ﻿using AutoMapper;
 using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
-using FalzoGamer.Cross.Authentication;
 using FalzoGamer.Domain.Entities;
-using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Linq;
 using System.Net;
-using System.Threading.Tasks;
 
 namespace FalzoGamer.Api.Controllers
 {
     /// <summary>
     /// Controller UsuarioController
     /// </summary>
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UsuarioController : ControllerBase
