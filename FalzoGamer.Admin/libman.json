@@ -5,10 +5,6 @@
     {
       "library": "admin-lte@2.4.10",
       "destination": "wwwroot/lib/admin-lte/"
-    },
-    {
-      "library": "iCheck@1.0.1",
-      "destination": "wwwroot/iCheck/"
     }
   ]
 }

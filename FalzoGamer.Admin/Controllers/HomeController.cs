@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using FalzoGamer.Admin.Models;
 using Microsoft.AspNetCore.Mvc;
-using FalzoGamer.Admin.Models;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace FalzoGamer.Admin.Controllers
 {
@@ -12,6 +9,9 @@ namespace FalzoGamer.Admin.Controllers
     {
         public IActionResult Index()
         {
+            var version = Assembly.GetEntryAssembly().GetCustomAttribute<AssemblyInformationalVersionAttribute>().InformationalVersion;
+
+
             return View();
         }
 
