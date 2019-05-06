@@ -34,7 +34,7 @@
         <header class="main-header">
 
             <!-- Logo -->
-            <a href="index2.html" class="logo">
+            <a asp-action="Index" asp-controller="Home" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><img src="~/images/falzogamerlogoinvert.png" width="50" height="50" /></span>
                 <!-- logo for regular state and mobile devices -->
@@ -172,7 +172,9 @@
                                     <a href="#">Preferências</a>
                                 </li>
                                 <li class="user-body">
-                                    <a href="@Url.Action("Logoff", "Home")">Sair</a>
+                                    <form asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="~/Identity/Account/Login" method="post" id="logoutForm">
+                                        <button type="submit" class="btn btn-link btn-block">Sair</button>
+                                    </form>
                                 </li>
                             </ul>
                         </li>
@@ -216,18 +218,6 @@
                     <!-- Optionally, you can add icons to the links -->
                     <li class="active"><a href="#"><i class="fa fa-gamepad"></i> <span>Produtos</span></a></li>
                     <li><a href="#"><i class="fa fa-money"></i> <span>Vendas</span></a></li>
-                    <li class="treeview">
-                        <a href="#">
-                            <i class="fa fa-link"></i> <span>Multilevel</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            <li><a href="#">Link in level 2</a></li>
-                            <li><a href="#">Link in level 2</a></li>
-                        </ul>
-                    </li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
