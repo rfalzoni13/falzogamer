@@ -1,14 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using FalzoGamer.Admin.Models;
+﻿using FalzoGamer.Admin.Models;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using MimeKit;
+using System.ComponentModel.DataAnnotations;
+using System.IO;
+using System.Threading.Tasks;
 
 namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
 {
@@ -17,9 +17,13 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly IEmailSender _emailSender;
+        private readonly IHostingEnvironment _env;
 
-        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, IEmailSender emailSender)
+        public ForgotPasswordModel(UserManager<ApplicationUser> userManager, 
+            IHostingEnvironment env,
+            IEmailSender emailSender)
         {
+            _env = env;
             _userManager = userManager;
             _emailSender = emailSender;
         }
@@ -45,19 +49,34 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
                     return RedirectToPage("./ForgotPasswordConfirmation");
                 }
 
-                // For more information on how to enable account confirmation and password reset please 
-                // visit https://go.microsoft.com/fwlink/?LinkID=532713
-                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var pathToFile = _env.WebRootPath
+                    + Path.DirectorySeparatorChar.ToString()
+                    + "templates"
+                    + Path.DirectorySeparatorChar.ToString()
+                    + "PasswordRecoveryEmail.html";
+
+                var builder = new BodyBuilder();
+
+                using (StreamReader sourceReader = System.IO.File.OpenText(pathToFile))
+                {
+                    builder.HtmlBody = sourceReader.ReadToEnd();
+                }
+                    // For more information on how to enable account confirmation and password reset please 
+                    // visit https://go.microsoft.com/fwlink/?LinkID=532713
+                    var code = await _userManager.GeneratePasswordResetTokenAsync(user);
                 var callbackUrl = Url.Page(
                     "/Account/ResetPassword",
                     pageHandler: null,
                     values: new { code },
                     protocol: Request.Scheme);
 
+
+                var messageBody = string.Format(builder.HtmlBody, callbackUrl);
+                
                 await _emailSender.SendEmailAsync(
                     Input.Email,
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    "Recuperar Senha",
+                    messageBody);
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }

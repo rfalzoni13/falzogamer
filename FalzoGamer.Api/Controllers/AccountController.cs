@@ -93,7 +93,8 @@ namespace FalzoGamer.Api.Controllers
                         FirstName = usuarioModel.Nome.Split(' ').FirstOrDefault(),
                         LastName = usuarioModel.Nome.Split(' ').LastOrDefault(),
                         Email = usuarioModel.Email,
-                        UserName = usuarioModel.Login
+                        UserName = usuarioModel.Login,
+                        EmailConfirmed = true
                     };
 
                     var result = await RegistrarUsuario(user);

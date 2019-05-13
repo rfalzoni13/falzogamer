@@ -5,6 +5,7 @@ C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcore
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.pdb
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.Views.dll
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.Views.pdb
+C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.csprojAssemblyReference.cache
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.csproj.CoreCompileInputs.cache
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.RazorAssemblyInfo.cache
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.RazorAssemblyInfo.cs
@@ -15,6 +16,7 @@ C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcore
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.TagHelpers.output.cache
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.RazorCoreGenerate.cache
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ForgotPassword.g.cshtml.cs
+C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\ForgotPasswordConfirmation.g.cshtml.cs
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Login.g.cshtml.cs
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\Register.g.cshtml.cs
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\Razor\Areas\Identity\Pages\Account\_ViewImports.g.cshtml.cs
@@ -37,4 +39,3 @@ C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcore
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.dll
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.pdb
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.csproj.CopyComplete
-C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.csprojAssemblyReference.cache
