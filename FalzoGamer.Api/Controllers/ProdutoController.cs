@@ -2,7 +2,9 @@
 using FalzoGamer.Api.Models;
 using FalzoGamer.Application.Interfaces;
 using FalzoGamer.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
 using System.Net;
@@ -12,24 +14,29 @@ namespace FalzoGamer.Api.Controllers
     /// <summary>
     /// Controller Produto Controller
     /// </summary>
+    [Authorize("Bearer")]
     [Route("api/[controller]")]
     [ApiController]
     public class ProdutoController : ControllerBase
     {
         private readonly IProdutoAppServico _produtoAppServico;
+        private readonly ILogger<ProdutoController> _logger;
 
         /// <summary>
         /// Construtor ProdutoController que gera a interface _produtoAppServico
         /// </summary>
         /// <param name="produtoAppServico"></param>
-        public ProdutoController(IProdutoAppServico produtoAppServico)
+        /// <param name="logger"></param>
+        public ProdutoController(IProdutoAppServico produtoAppServico, ILogger<ProdutoController> logger)
         {
             _produtoAppServico = produtoAppServico;
+            _logger = logger;
         }
 
         /// <summary>
         /// Listar todos os produtos
         /// </summary>
+        /// <response code="401">Unauthorized</response>
         /// <response code="404">Not Found</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
@@ -41,16 +48,19 @@ namespace FalzoGamer.Api.Controllers
         [Route("Listar")]
         public IActionResult Listar()
         {
+            _logger.LogDebug("Listar - Iniciando");
             try
             {
                 var produtos = _produtoAppServico.BuscarTodos();
 
                 if (produtos != null && produtos.Count() > 0)
                 {
+                    _logger.LogInformation("Listar - Sucesso!");
                     return Ok(produtos);
                 }
                 else
                 {
+                    _logger.LogWarning("Listar - Nenhum registro encontrado!");
                     return NotFound(new
                     {
                         Status = HttpStatusCode.NotFound,
@@ -60,6 +70,7 @@ namespace FalzoGamer.Api.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Listar - erro: " + ex);
                 var response = new ObjectResponse
                 {
                     Status = HttpStatusCode.InternalServerError,
@@ -73,6 +84,7 @@ namespace FalzoGamer.Api.Controllers
         /// <summary>
         /// Listar produto pelo Id
         /// </summary>
+        /// <response code="401">Unauthorized</response>
         /// <response code="404">Not Found</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
@@ -85,16 +97,19 @@ namespace FalzoGamer.Api.Controllers
         [Route("BuscarPorId")]
         public IActionResult BuscarPorId([FromQuery] int id)
         {
+            _logger.LogDebug("BuscarPorId - Iniciando");
             try
             {
                 var produto = _produtoAppServico.BuscarPorId(id);
 
                 if (produto != null)
                 {
+                    _logger.LogInformation("BuscarPorId - Sucesso!");
                     return Ok(produto);
                 }
                 else
                 {
+                    _logger.LogWarning("BuscarPorId - Nenhum registro encontrado!");
                     return NotFound(new
                     {
                         Status = HttpStatusCode.NotFound,
@@ -104,6 +119,7 @@ namespace FalzoGamer.Api.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("BuscarPorId - erro: " + ex);
                 var response = new ObjectResponse
                 {
                     Status = HttpStatusCode.InternalServerError,
@@ -117,6 +133,7 @@ namespace FalzoGamer.Api.Controllers
         /// <summary>
         /// Inserir produto
         /// </summary>
+        /// <response code="401">Unauthorized</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
         /// Insere um novo produto na base
@@ -128,6 +145,7 @@ namespace FalzoGamer.Api.Controllers
         [Route("Inserir")]
         public IActionResult Inserir([FromBody] ProdutoModel produtoModel)
         {
+            _logger.LogDebug("Inserir - Iniciando");
             try
             {
                 produtoModel.Created = DateTime.Now;
@@ -138,10 +156,12 @@ namespace FalzoGamer.Api.Controllers
 
                 _produtoAppServico.Adicionar(produto);
 
+                _logger.LogInformation("Inserir - Sucesso!");
                 return Ok("Produto inserido com sucesso!");
             }
             catch (Exception ex)
             {
+                _logger.LogError("Inserir - erro: " + ex);
                 var response = new ObjectResponse
                 {
                     Status = HttpStatusCode.InternalServerError,
@@ -155,6 +175,7 @@ namespace FalzoGamer.Api.Controllers
         /// <summary>
         /// Atualizar produto
         /// </summary>
+        /// <response code="401">Unauthorized</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
         /// Atualiza o produto na base
@@ -166,6 +187,7 @@ namespace FalzoGamer.Api.Controllers
         [Route("Atualizar")]
         public IActionResult Atualizar([FromBody] ProdutoModel produtoModel)
         {
+            _logger.LogDebug("Atualizar - Iniciando");
             try
             {
                 produtoModel.Modified = DateTime.Now;
@@ -176,10 +198,12 @@ namespace FalzoGamer.Api.Controllers
 
                 _produtoAppServico.Atualizar(produto);
 
+                _logger.LogInformation("Atualizar - Sucesso!");
                 return Ok("Produto atualizado com sucesso!");
             }
             catch (Exception ex)
             {
+                _logger.LogError("Atualizar - erro: " + ex);
                 var response = new ObjectResponse
                 {
                     Status = HttpStatusCode.InternalServerError,
@@ -193,6 +217,7 @@ namespace FalzoGamer.Api.Controllers
         /// <summary>
         /// Excluir produto
         /// </summary>
+        /// <response code="401">Unauthorized</response>
         /// <response code="404">Not Found</response>
         /// <response code="500">Internal Server Error</response>
         /// <remarks>
@@ -205,6 +230,7 @@ namespace FalzoGamer.Api.Controllers
         [Route("Excluir")]
         public IActionResult Excluir([FromQuery] int id)
         {
+            _logger.LogDebug("Excluir - Iniciando");
             try
             {
                 var produto = _produtoAppServico.BuscarPorId(id);
@@ -213,10 +239,12 @@ namespace FalzoGamer.Api.Controllers
                 {
                     _produtoAppServico.Apagar(produto);
 
+                    _logger.LogInformation("Excluir - Sucesso!");
                     return Ok("Produto apagado com sucesso!");
                 }
                 else
                 {
+                    _logger.LogWarning("Excluir - Nenhum registro encontrado!");
                     return NotFound(new
                     {
                         Status = HttpStatusCode.NotFound,
@@ -227,6 +255,7 @@ namespace FalzoGamer.Api.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError("Excluir - erro: " + ex);
                 var response = new ObjectResponse
                 {
                     Status = HttpStatusCode.InternalServerError,

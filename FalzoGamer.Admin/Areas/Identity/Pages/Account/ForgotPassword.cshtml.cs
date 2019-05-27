@@ -1,11 +1,14 @@
 ﻿using FalzoGamer.Admin.Models;
+using FalzoGamer.Admin.Models.MailKit;
+using FalzoGamer.Admin.Models.MailKit.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Logging;
 using MimeKit;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Threading.Tasks;
@@ -16,16 +19,19 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
     public class ForgotPasswordModel : PageModel
     {
         private readonly UserManager<ApplicationUser> _userManager;
-        private readonly IEmailSender _emailSender;
         private readonly IHostingEnvironment _env;
+        private readonly ILogger<ForgotPasswordModel> _logger;
+        private readonly IEmailServico _emailServico;
 
         public ForgotPasswordModel(UserManager<ApplicationUser> userManager, 
             IHostingEnvironment env,
-            IEmailSender emailSender)
+            ILogger<ForgotPasswordModel> logger,
+            IEmailServico emailServico)
         {
             _env = env;
             _userManager = userManager;
-            _emailSender = emailSender;
+            _logger = logger;
+            _emailServico = emailServico;
         }
 
         [BindProperty]
@@ -40,48 +46,62 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (ModelState.IsValid)
+            try
             {
-                var user = await _userManager.FindByEmailAsync(Input.Email);
-                if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+                if (ModelState.IsValid)
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToPage("./ForgotPasswordConfirmation");
-                }
+                    var user = await _userManager.FindByEmailAsync(Input.Email);
+                    if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
+                    {
+                        // Don't reveal that the user does not exist or is not confirmed
+                        return RedirectToPage("./ForgotPasswordConfirmation");
+                    }
 
-                var pathToFile = _env.WebRootPath
-                    + Path.DirectorySeparatorChar.ToString()
-                    + "templates"
-                    + Path.DirectorySeparatorChar.ToString()
-                    + "PasswordRecoveryEmail.html";
+                    var pathToFile = _env.WebRootPath
+                        + Path.DirectorySeparatorChar.ToString()
+                        + "templates"
+                        + Path.DirectorySeparatorChar.ToString()
+                        + "PasswordRecoveryEmail.html";
 
-                var builder = new BodyBuilder();
+                    var builder = new BodyBuilder();
 
-                using (StreamReader sourceReader = System.IO.File.OpenText(pathToFile))
-                {
-                    builder.HtmlBody = sourceReader.ReadToEnd();
-                }
+                    using (StreamReader sourceReader = System.IO.File.OpenText(pathToFile))
+                    {
+                        builder.HtmlBody = sourceReader.ReadToEnd();
+                    }
                     // For more information on how to enable account confirmation and password reset please 
                     // visit https://go.microsoft.com/fwlink/?LinkID=532713
                     var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                var callbackUrl = Url.Page(
-                    "/Account/ResetPassword",
-                    pageHandler: null,
-                    values: new { code },
-                    protocol: Request.Scheme);
+                    var callbackUrl = Url.Page(
+                        "/Account/ResetPassword",
+                        pageHandler: null,
+                        values: new { code },
+                        protocol: Request.Scheme);
 
 
-                var messageBody = string.Format(builder.HtmlBody, callbackUrl);
-                
-                await _emailSender.SendEmailAsync(
-                    Input.Email,
-                    "Recuperar Senha",
-                    messageBody);
+                    string messageBody = string.Format(builder.HtmlBody, callbackUrl);
 
-                return RedirectToPage("./ForgotPasswordConfirmation");
+                    var mail = new MensagemEmail()
+                    {
+                        Assunto = "Email de Recuperação de senha",
+                        Conteudo = messageBody
+                    };
+
+                    mail.DeEndereco.Add(new EnderecoEmail() { Nome = "FalzoGamer", Endereco = "contato@falzogamer.com" });
+                    mail.ParaEndereco.Add(new EnderecoEmail() { Nome = user.FirstName + " " + user.LastName, Endereco = Input.Email });
+
+                    _emailServico.Send(mail);
+
+                    return RedirectToPage("./ForgotPasswordConfirmation");
+                }
+
+                return Page();
             }
-
-            return Page();
+            catch(Exception ex)
+            {
+                _logger.LogError("Ocorreu o seguinte erro: " + ex.Message);
+                return Page();
+            }
         }
     }
 }

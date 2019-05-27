@@ -1,3 +1,4 @@
+C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\NLog.config
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.deps.json
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.runtimeconfig.json
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.runtimeconfig.dev.json
