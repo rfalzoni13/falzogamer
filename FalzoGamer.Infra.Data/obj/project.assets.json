@@ -1098,7 +1098,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.1.8": {
-      "sha512": "EFxXwsMzJQJs3Ve4+b+7UIbVWAypbeeAftMdrEzTnHfjZieiSJdLwMoymCNvIaFWnYC/YEDNHKinv67D3cywTA==",
+      "sha512": "NJtiBtIBbDXioh0uR4UHxepMZSzFbB9E6aYsZbFmxWqTWUMY2X5T09e2FbV0f00fM+oCNSCUvZhdpbm/TH7XFg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.1.8",
       "files": [
@@ -1111,7 +1111,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.1.8": {
-      "sha512": "8BSX1+22FemfXqlfkPNcRdcF7cEhtbUhlVOCiZhpjNa0aVB2JRfwAxuXVKXauvR9rv+OmykECOIz6gH7+kiqyA==",
+      "sha512": "yE7wcKP86ts31RlHtJ3PBE7zV9lV6AfZim+Z/+E8CR+AYkVFoL+IqtRzcWVYIDw1nI+HkTN4fP9mIpk1hvDCHA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.1.8",
       "files": [
@@ -1124,7 +1124,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.1.8": {
-      "sha512": "z5eUyVo5DfId5hAg4Q811MxFnIOLQhedn7FlTM8KRtiCGuPVTF5oyu1GWSCIkkVZRoznRKc/fzd1KD//J747iA==",
+      "sha512": "1sr6h8XoR7tsLnGldLoTvF+VlAiYV3adJYmgux37O1aqJugZ26cLyEZgYGfkh83eM0DoZdw+Sml+enmRBjvA4A==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.1.8",
       "files": [
@@ -1153,7 +1153,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.1.8": {
-      "sha512": "pPYfRdX3/zq+J70++9Z36RLh/nk0KfgmTzj/1Fpg2qRoDeAZYwBr7NW0T36CVo5n0hMC25B2EjoPnnROiwoxAg==",
+      "sha512": "ClVnAVa4OH3g4fLpD8pgzdfJmF7WJK+PPCxsTUZUlbuPHut0LBlM/TKDcSScHQI0ePcY+xgEmZ9GAZqtNXW4zg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/2.1.8",
       "files": [
@@ -1166,7 +1166,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.1.8": {
-      "sha512": "/iddGXryzw2uNXoGjKpsaBvVW7x+8pRwVdPaF+KXGKEmou2fpynXcoQaOJ3moMnpDbBxnACrBB8hMWbzS8jvdA==",
+      "sha512": "pVEh7mftFLSwea4hMyXEYA08oHugkgUdCh0W66Jq6NVSQKxrTQrwqt3Dke/x4LtFlTordNISBBQar+HudjStLA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/2.1.8",
       "files": [
@@ -3798,23 +3798,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Renato\\.nuget\\packages\\": {},
+    "C:\\Users\\renato.falzoni\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.Data\\FalzoGamer.Infra.Data.csproj",
+      "projectUniqueName": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.Data\\FalzoGamer.Infra.Data.csproj",
       "projectName": "FalzoGamer.Infra.Data",
-      "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.Data\\FalzoGamer.Infra.Data.csproj",
-      "packagesPath": "C:\\Users\\Renato\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.Data\\obj\\",
+      "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.Data\\FalzoGamer.Infra.Data.csproj",
+      "packagesPath": "C:\\Users\\renato.falzoni\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.Data\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Renato\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\renato.falzoni\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3827,8 +3827,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj": {
-              "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj"
+            "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj": {
+              "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj"
             }
           }
         }

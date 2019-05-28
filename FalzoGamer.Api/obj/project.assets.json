@@ -5778,7 +5778,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Design/2.1.1": {
-      "sha512": "BOK5fckW9v7xWjpEI6bPGwkjw10OPVASZcAa8HoWJo/0Mmg4Azddj92v8noU+YgvD/6zNZ9o/RiRXXKxk5rYwQ==",
+      "sha512": "1XHObHLx6A0/57ZmLG9gfKMO/Z/gQjRXPFWQDMlPZGYwcfgufvSdmI2+RYvR5DGkbba9HIHC35ClNQ2yVNIohw==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.design/2.1.1",
       "hasTools": true,
@@ -5805,7 +5805,7 @@
       ]
     },
     "Microsoft.AspNetCore.Razor.Language/2.1.2": {
-      "sha512": "QZTtl+2QEoiVlBfDnq1dNW4Ak/fwMoKxQabm0wzVwfn0mEsrWHKdwyBaSucta5j7gwz8DR0QU90U+6dFTmRQmQ==",
+      "sha512": "sTajqea7Ef0bIB5z+/ByhmznbsqhA+Q4lQw6zSAZC873o6b5yQTu9/5ejKO2B8Kl2S3mdYOJIGY6Eq/IRd788w==",
       "type": "package",
       "path": "microsoft.aspnetcore.razor.language/2.1.2",
       "files": [
@@ -6320,7 +6320,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore/2.1.8": {
-      "sha512": "EFxXwsMzJQJs3Ve4+b+7UIbVWAypbeeAftMdrEzTnHfjZieiSJdLwMoymCNvIaFWnYC/YEDNHKinv67D3cywTA==",
+      "sha512": "NJtiBtIBbDXioh0uR4UHxepMZSzFbB9E6aYsZbFmxWqTWUMY2X5T09e2FbV0f00fM+oCNSCUvZhdpbm/TH7XFg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore/2.1.8",
       "files": [
@@ -6333,7 +6333,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Abstractions/2.1.8": {
-      "sha512": "8BSX1+22FemfXqlfkPNcRdcF7cEhtbUhlVOCiZhpjNa0aVB2JRfwAxuXVKXauvR9rv+OmykECOIz6gH7+kiqyA==",
+      "sha512": "yE7wcKP86ts31RlHtJ3PBE7zV9lV6AfZim+Z/+E8CR+AYkVFoL+IqtRzcWVYIDw1nI+HkTN4fP9mIpk1hvDCHA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.abstractions/2.1.8",
       "files": [
@@ -6346,7 +6346,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Analyzers/2.1.8": {
-      "sha512": "z5eUyVo5DfId5hAg4Q811MxFnIOLQhedn7FlTM8KRtiCGuPVTF5oyu1GWSCIkkVZRoznRKc/fzd1KD//J747iA==",
+      "sha512": "1sr6h8XoR7tsLnGldLoTvF+VlAiYV3adJYmgux37O1aqJugZ26cLyEZgYGfkh83eM0DoZdw+Sml+enmRBjvA4A==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.analyzers/2.1.8",
       "files": [
@@ -6388,7 +6388,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.Relational/2.1.8": {
-      "sha512": "pPYfRdX3/zq+J70++9Z36RLh/nk0KfgmTzj/1Fpg2qRoDeAZYwBr7NW0T36CVo5n0hMC25B2EjoPnnROiwoxAg==",
+      "sha512": "ClVnAVa4OH3g4fLpD8pgzdfJmF7WJK+PPCxsTUZUlbuPHut0LBlM/TKDcSScHQI0ePcY+xgEmZ9GAZqtNXW4zg==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.relational/2.1.8",
       "files": [
@@ -6401,7 +6401,7 @@
       ]
     },
     "Microsoft.EntityFrameworkCore.SqlServer/2.1.8": {
-      "sha512": "/iddGXryzw2uNXoGjKpsaBvVW7x+8pRwVdPaF+KXGKEmou2fpynXcoQaOJ3moMnpDbBxnACrBB8hMWbzS8jvdA==",
+      "sha512": "pVEh7mftFLSwea4hMyXEYA08oHugkgUdCh0W66Jq6NVSQKxrTQrwqt3Dke/x4LtFlTordNISBBQar+HudjStLA==",
       "type": "package",
       "path": "microsoft.entityframeworkcore.sqlserver/2.1.8",
       "files": [
@@ -8359,7 +8359,7 @@
       ]
     },
     "Swashbuckle.AspNetCore/4.0.1": {
-      "sha512": "k8TzWTpjwO+4xXsMaaAsAPAdYKyM5wuRvSP+ZmgtyXwhW45ChBVq3xdVJ8Tz+hQ0ziBZSh5p6r2dkRN6SyasVA==",
+      "sha512": "Zq6lkFieuFPNDwXwQ+e8i5zy2VMrexcRFU8mQORxqIc8r7Y+qKX63vg57yL1HeGCINHQGGzxGfw2rP63IeEqhg==",
       "type": "package",
       "path": "swashbuckle.aspnetcore/4.0.1",
       "files": [
@@ -8371,7 +8371,7 @@
       ]
     },
     "Swashbuckle.AspNetCore.Swagger/4.0.1": {
-      "sha512": "2+dXBiOvwjNmkMkBOqGU9ShBJXQp6+UN/Kxfk3HLxwsof9zzgRZ+3rOdjHQuYiY7t1Nl7wlCgn9HbmJyZGhdaQ==",
+      "sha512": "rqzS3vHrjz+tR5j0nZOKZyaMTDfLGbVYkwMq205aYuGbsiGwbOlNU0Q8lq4Q0ptQPMKVkUf8XouCIdJ3qpK17w==",
       "type": "package",
       "path": "swashbuckle.aspnetcore.swagger/4.0.1",
       "files": [
@@ -8384,7 +8384,7 @@
       ]
     },
     "Swashbuckle.AspNetCore.SwaggerGen/4.0.1": {
-      "sha512": "opm/wgG8u987ZuAUtL1E8XrJig+UbGYbFmz8VnA8Vn3AqZyQZy4k243X9egz1iWl/B6sNcgMlFyv3wkdmjJX6g==",
+      "sha512": "ztAj0T1U+2AqQNA8b+nr8yVkDW9XzNaAfez6d1jO13sdn2A/JW5Syn9TThsakrHxYNLt6y6aQCXbyBfQXpcQwA==",
       "type": "package",
       "path": "swashbuckle.aspnetcore.swaggergen/4.0.1",
       "files": [
@@ -8397,7 +8397,7 @@
       ]
     },
     "Swashbuckle.AspNetCore.SwaggerUI/4.0.1": {
-      "sha512": "EjPeIYSMLr5FrY4sVJiWrzIQe07Hriv8tOztJa7US88im/tO+tX70y7OJ2Cr8QYojc7IotjZSH1lD8j44DLnrQ==",
+      "sha512": "d2U7NyV0e4UhyCzAVK9QHm0iz2QoVPUa9XzJ/Gr0rn/jBZWFpVLvigKv0vxFzO2E793sY605+4h885gvCdKSxQ==",
       "type": "package",
       "path": "swashbuckle.aspnetcore.swaggerui/4.0.1",
       "files": [
@@ -12987,23 +12987,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Renato\\.nuget\\packages\\": {},
+    "C:\\Users\\renato.falzoni\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\FalzoGamer.Api.csproj",
+      "projectUniqueName": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\FalzoGamer.Api.csproj",
       "projectName": "FalzoGamer.Api",
-      "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\FalzoGamer.Api.csproj",
-      "packagesPath": "C:\\Users\\Renato\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\obj\\",
+      "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\FalzoGamer.Api.csproj",
+      "packagesPath": "C:\\Users\\renato.falzoni\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Renato\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\renato.falzoni\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -13016,11 +13016,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Cross\\FalzoGamer.Cross.csproj": {
-              "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Cross\\FalzoGamer.Cross.csproj"
+            "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Cross\\FalzoGamer.Cross.csproj": {
+              "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Cross\\FalzoGamer.Cross.csproj"
             },
-            "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.IoC\\FalzoGamer.Infra.IoC.csproj": {
-              "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.IoC\\FalzoGamer.Infra.IoC.csproj"
+            "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.IoC\\FalzoGamer.Infra.IoC.csproj": {
+              "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Infra.IoC\\FalzoGamer.Infra.IoC.csproj"
             }
           }
         }

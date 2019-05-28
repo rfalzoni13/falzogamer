@@ -10,3 +10,15 @@ C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netc
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.csproj.CopyComplete
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.dll
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\bin\Debug\netcoreapp2.1\FalzoGamer.Services.deps.json
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\bin\Debug\netcoreapp2.1\FalzoGamer.Services.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\bin\Debug\netcoreapp2.1\FalzoGamer.Services.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.csprojAssemblyReference.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.csproj.CoreCompileInputs.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.AssemblyInfoInputs.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.AssemblyInfo.cs
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.csproj.CopyComplete
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Services\obj\Debug\netcoreapp2.1\FalzoGamer.Services.pdb

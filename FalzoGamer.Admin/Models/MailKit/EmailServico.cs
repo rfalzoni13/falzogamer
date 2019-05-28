@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using FalzoGamer.Admin.Models.MailKit.Interfaces;
 using MailKit.Net.Pop3;
 using MailKit.Net.Smtp;
@@ -71,6 +72,36 @@ namespace FalzoGamer.Admin.Models.MailKit
                 emailClient.Send(message);
 
                 emailClient.Disconnect(true);
+            }
+        }
+
+        public async Task SendAsync(MensagemEmail mensagemEmail)
+        {
+            var message = new MimeMessage();
+            message.To.AddRange(mensagemEmail.ParaEndereco.Select(x => new MailboxAddress(x.Nome, x.Endereco)));
+            message.From.AddRange(mensagemEmail.DeEndereco.Select(x => new MailboxAddress(x.Nome, x.Endereco)));
+
+            message.Subject = mensagemEmail.Assunto;
+            //We will say we are sending HTML. But there are options for plaintext etc. 
+            message.Body = new TextPart(TextFormat.Html)
+            {
+                Text = mensagemEmail.Conteudo
+            };
+
+            //Be careful that the SmtpClient class is the one from Mailkit not the framework!
+            using (var emailClient = new SmtpClient())
+            {
+                //The last parameter here is to use SSL (Which you should!)
+                await emailClient.ConnectAsync(_emailConfiguracao.SmtpServer, _emailConfiguracao.SmtpPort, false);
+
+                //Remove any OAuth functionality as we won't be using it. 
+                emailClient.AuthenticationMechanisms.Remove("XOAUTH2");
+
+                await emailClient.AuthenticateAsync(_emailConfiguracao.SmtpUsername, _emailConfiguracao.SmtpPassword);
+
+                await emailClient.SendAsync(message);
+
+                await emailClient.DisconnectAsync(true);
             }
         }
     }

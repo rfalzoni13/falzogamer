@@ -12,3 +12,17 @@ C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\ne
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.csproj.CopyComplete
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.dll
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.deps.json
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.runtimeconfig.json
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.runtimeconfig.dev.json
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.csprojAssemblyReference.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.csproj.CoreCompileInputs.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.AssemblyInfoInputs.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.AssemblyInfo.cs
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.csproj.CopyComplete
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Infra.Data\obj\Debug\netcoreapp2.1\FalzoGamer.Infra.Data.pdb

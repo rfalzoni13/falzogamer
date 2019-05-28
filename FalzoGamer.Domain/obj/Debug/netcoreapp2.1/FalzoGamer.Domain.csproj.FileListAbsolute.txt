@@ -7,3 +7,12 @@ C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcor
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.AssemblyInfo.cs
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.dll
 C:\Users\Renato\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.deps.json
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\bin\Debug\netcoreapp2.1\FalzoGamer.Domain.pdb
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.csprojAssemblyReference.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.csproj.CoreCompileInputs.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.AssemblyInfoInputs.cache
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.AssemblyInfo.cs
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.dll
+C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Domain\obj\Debug\netcoreapp2.1\FalzoGamer.Domain.pdb

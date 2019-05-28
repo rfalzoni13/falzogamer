@@ -53,9 +53,12 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
                     var user = await _userManager.FindByEmailAsync(Input.Email);
                     if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
                     {
+                        _logger.LogWarning("Nenhum usuário encontrado!");
                         // Don't reveal that the user does not exist or is not confirmed
                         return RedirectToPage("./ForgotPasswordConfirmation");
                     }
+
+                    _logger.LogInformation("Criando corpo de e-mail");
 
                     var pathToFile = _env.WebRootPath
                         + Path.DirectorySeparatorChar.ToString()
@@ -81,6 +84,7 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
 
                     string messageBody = string.Format(builder.HtmlBody, callbackUrl);
 
+                    _logger.LogInformation("Criando Email");
                     var mail = new MensagemEmail()
                     {
                         Assunto = "Email de Recuperação de senha",
@@ -90,7 +94,8 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
                     mail.DeEndereco.Add(new EnderecoEmail() { Nome = "FalzoGamer", Endereco = "contato@falzogamer.com" });
                     mail.ParaEndereco.Add(new EnderecoEmail() { Nome = user.FirstName + " " + user.LastName, Endereco = Input.Email });
 
-                    _emailServico.Send(mail);
+                    _logger.LogInformation("Enviando Email");
+                    await _emailServico.SendAsync(mail);
 
                     return RedirectToPage("./ForgotPasswordConfirmation");
                 }
