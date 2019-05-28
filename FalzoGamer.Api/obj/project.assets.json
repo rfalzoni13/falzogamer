@@ -13094,13 +13094,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema ao ler o arquivo de cache C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Api\\obj\\FalzoGamer.Api.csproj.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  }
 }
