@@ -1,5 +1,7 @@
 ﻿using FalzoGamer.Admin.Data;
 using FalzoGamer.Admin.Models;
+using FalzoGamer.Admin.Models.MailKit;
+using FalzoGamer.Admin.Models.MailKit.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,6 +36,9 @@ namespace FalzoGamer.Admin
                     Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<ApplicationUser>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddSingleton<IEmailConfiguracao>(Configuration.GetSection("EmailConfiguration").Get<EmailConfiguracao>());
+            services.AddTransient<IEmailServico, EmailServico>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }

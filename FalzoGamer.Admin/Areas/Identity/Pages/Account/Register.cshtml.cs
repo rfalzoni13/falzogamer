@@ -1,11 +1,15 @@
 ﻿using FalzoGamer.Admin.Models;
+using FalzoGamer.Admin.Models.MailKit;
+using FalzoGamer.Admin.Models.MailKit.Interfaces;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using MimeKit;
 using System.ComponentModel.DataAnnotations;
+using System.IO;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 
@@ -16,19 +20,22 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
     {
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly UserManager<ApplicationUser> _userManager;
+        private readonly IHostingEnvironment _env;
         private readonly ILogger<RegisterModel> _logger;
-        private readonly IEmailSender _emailSender;
+        private readonly IEmailServico _emailServico;
 
         public RegisterModel(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            IHostingEnvironment env,
             ILogger<RegisterModel> logger,
-            IEmailSender emailSender)
+            IEmailServico emailServico)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-            _emailSender = emailSender;
+            _emailServico = emailServico;
+            _env = env;
         }
 
         [BindProperty]
@@ -73,17 +80,44 @@ namespace FalzoGamer.Admin.Areas.Identity.Pages.Account
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    _logger.LogInformation("Usuário criado com sucesso!");
 
-                    var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                    _logger.LogInformation("Criando corpo de e-mail");
+
+                    var pathToFile = _env.WebRootPath
+                        + Path.DirectorySeparatorChar.ToString()
+                        + "templates"
+                        + Path.DirectorySeparatorChar.ToString()
+                        + "EmailConfirmation.html";
+
+                    var builder = new BodyBuilder();
+
+                    using (StreamReader sourceReader = System.IO.File.OpenText(pathToFile))
+                    {
+                        builder.HtmlBody = sourceReader.ReadToEnd();
+                    }
+
+                    var codigo = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var callbackUrl = Url.Page(
                         "/Account/ConfirmEmail",
                         pageHandler: null,
-                        values: new { userId = user.Id, code = code },
+                        values: new { userId = user.Id, code = codigo },
                         protocol: Request.Scheme);
 
-                    await _emailSender.SendEmailAsync(Input.Email, "Confirm your email",
-                        $"Please confirm your account by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
+                    string messageBody = string.Format(builder.HtmlBody, callbackUrl);
+
+                    _logger.LogInformation("Criando Email");
+                    var mail = new MensagemEmail()
+                    {
+                        Assunto = "Confirmação de Email",
+                        Conteudo = messageBody
+                    };
+
+                    mail.DeEndereco.Add(new EnderecoEmail() { Nome = "FalzoGamer", Endereco = "contato@falzogamer.com" });
+                    mail.ParaEndereco.Add(new EnderecoEmail() { Nome = user.FirstName + " " + user.LastName, Endereco = Input.Email });
+
+                    _logger.LogInformation("Enviando Email");
+                    await _emailServico.SendAsync(mail);
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);

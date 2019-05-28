@@ -39,7 +39,7 @@
             Controller AccountController
             </summary>
         </member>
-        <member name="M:FalzoGamer.Api.Controllers.AccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{FalzoGamer.Cross.Authentication.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},FalzoGamer.Application.Interfaces.IAcessoAppServico,FalzoGamer.Application.Interfaces.IUsuarioAppServico,Microsoft.AspNetCore.Identity.SignInManager{FalzoGamer.Cross.Authentication.ApplicationUser},FalzoGamer.Cross.Authentication.TokenConfigurations,FalzoGamer.Cross.Authentication.SigningConfigurations)">
+        <member name="M:FalzoGamer.Api.Controllers.AccountController.#ctor(Microsoft.AspNetCore.Identity.UserManager{FalzoGamer.Cross.Authentication.ApplicationUser},Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},FalzoGamer.Application.Interfaces.IAcessoAppServico,FalzoGamer.Application.Interfaces.IUsuarioAppServico,Microsoft.AspNetCore.Identity.SignInManager{FalzoGamer.Cross.Authentication.ApplicationUser},FalzoGamer.Cross.Authentication.TokenConfigurations,FalzoGamer.Cross.Authentication.SigningConfigurations,Microsoft.Extensions.Logging.ILogger{FalzoGamer.Api.Controllers.AccountController})">
             <summary>
             Construtor BaseController que gera as interfaces _userManager e _roleManager
             </summary>
@@ -50,6 +50,7 @@
             <param name="signInManager"></param>
             <param name="tokenConfigurations"></param>
             <param name="signingConfigurations"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:FalzoGamer.Api.Controllers.AccountController.Registrar(FalzoGamer.Api.Models.UsuarioModel)">
             <summary>
@@ -124,17 +125,19 @@
             Controller AcessoController
             </summary>
         </member>
-        <member name="M:FalzoGamer.Api.Controllers.AcessoController.#ctor(FalzoGamer.Application.Interfaces.IAcessoAppServico,Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole})">
+        <member name="M:FalzoGamer.Api.Controllers.AcessoController.#ctor(FalzoGamer.Application.Interfaces.IAcessoAppServico,Microsoft.AspNetCore.Identity.RoleManager{Microsoft.AspNetCore.Identity.IdentityRole},Microsoft.Extensions.Logging.ILogger{FalzoGamer.Api.Controllers.AcessoController})">
             <summary>
             Construtor AcessoController que gera as interfaces _acessoAppServico e _roleManager
             </summary>
             <param name="acessoAppServico"></param>
             <param name="roleManager"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:FalzoGamer.Api.Controllers.AcessoController.Listar">
             <summary>
             Listar todos os acessos
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -146,6 +149,7 @@
             <summary>
             Listar acesso pelo Id
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -158,6 +162,7 @@
             <summary>
             Inserir acesso
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Insere um novo acesso na base
@@ -169,6 +174,7 @@
             <summary>
             Atualizar acesso
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Atualiza o acesso na base
@@ -180,6 +186,7 @@
             <summary>
             Excluir acesso
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -193,16 +200,18 @@
             Controller CategoriaController
             </summary>
         </member>
-        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.#ctor(FalzoGamer.Application.Interfaces.ICategoriaAppServico)">
+        <member name="M:FalzoGamer.Api.Controllers.CategoriaController.#ctor(FalzoGamer.Application.Interfaces.ICategoriaAppServico,Microsoft.Extensions.Logging.ILogger{FalzoGamer.Api.Controllers.CategoriaController})">
             <summary>
             Construtor CategoriaController que gera a interface _categoriaAppServico
             </summary>
             <param name="categoriaAppServico"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:FalzoGamer.Api.Controllers.CategoriaController.Listar">
             <summary>
             Listar todos as categorias
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -214,6 +223,7 @@
             <summary>
             Listar categoria pelo Id
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -226,6 +236,7 @@
             <summary>
             Inserir categoria
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Insere uma nova categoria na base
@@ -237,6 +248,7 @@
             <summary>
             Atualizar categoria
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Atualiza a categoria na base
@@ -248,6 +260,7 @@
             <summary>
             Excluir categoria
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -261,16 +274,18 @@
             Controller Produto Controller
             </summary>
         </member>
-        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.#ctor(FalzoGamer.Application.Interfaces.IProdutoAppServico)">
+        <member name="M:FalzoGamer.Api.Controllers.ProdutoController.#ctor(FalzoGamer.Application.Interfaces.IProdutoAppServico,Microsoft.Extensions.Logging.ILogger{FalzoGamer.Api.Controllers.ProdutoController})">
             <summary>
             Construtor ProdutoController que gera a interface _produtoAppServico
             </summary>
             <param name="produtoAppServico"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:FalzoGamer.Api.Controllers.ProdutoController.Listar">
             <summary>
             Listar todos os produtos
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -282,6 +297,7 @@
             <summary>
             Listar produto pelo Id
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -294,6 +310,7 @@
             <summary>
             Inserir produto
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Insere um novo produto na base
@@ -305,6 +322,7 @@
             <summary>
             Atualizar produto
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Atualiza o produto na base
@@ -316,6 +334,7 @@
             <summary>
             Excluir produto
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -329,17 +348,19 @@
             Controller UsuarioController
             </summary>
         </member>
-        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.#ctor(FalzoGamer.Application.Interfaces.IUsuarioAppServico)">
+        <member name="M:FalzoGamer.Api.Controllers.UsuarioController.#ctor(FalzoGamer.Application.Interfaces.IUsuarioAppServico,Microsoft.Extensions.Logging.ILogger{FalzoGamer.Api.Controllers.UsuarioController})">
             <summary>
             Construtor UsuarioController que gera as interfaces _usuarioAppServico,
             _acessoAppServico e os Identity Managers
             </summary>
             <param name="usuarioAppServico"></param>
+            <param name="logger"></param>
         </member>
         <member name="M:FalzoGamer.Api.Controllers.UsuarioController.Listar">
             <summary>
             Listar todos os usuários
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -351,6 +372,7 @@
             <summary>
             Listar usuário pelo Id
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -363,6 +385,7 @@
             <summary>
             Inserir usuário
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>
@@ -375,6 +398,7 @@
             <summary>
             Atualizar usuário
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="500">Internal Server Error</response>
             <remarks>
             Atualiza o usuário na base
@@ -386,6 +410,7 @@
             <summary>
             Excluir usuário
             </summary>
+            <response code="401">Unauthorized</response>
             <response code="404">Not Found</response>
             <response code="500">Internal Server Error</response>
             <remarks>

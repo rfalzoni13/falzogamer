@@ -31,3 +31,11 @@ for details on configuring this project to bundle and minify static web assets. 
 a {
     color: #e45959;
 }
+
+a:hover,
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #f38888;
+}
