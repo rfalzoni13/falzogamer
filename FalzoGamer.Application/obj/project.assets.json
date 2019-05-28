@@ -704,23 +704,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Renato\\.nuget\\packages\\": {},
+    "C:\\Users\\renato.falzoni\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Application\\FalzoGamer.Application.csproj",
+      "projectUniqueName": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Application\\FalzoGamer.Application.csproj",
       "projectName": "FalzoGamer.Application",
-      "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Application\\FalzoGamer.Application.csproj",
-      "packagesPath": "C:\\Users\\Renato\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Application\\obj\\",
+      "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Application\\FalzoGamer.Application.csproj",
+      "packagesPath": "C:\\Users\\renato.falzoni\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Renato\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\renato.falzoni\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -733,8 +733,8 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj": {
-              "projectPath": "C:\\Users\\Renato\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj"
+            "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj": {
+              "projectPath": "C:\\Users\\renato.falzoni\\Documents\\Projects\\FalzoGamer\\FalzoGamer.Domain\\FalzoGamer.Domain.csproj"
             }
           }
         }
