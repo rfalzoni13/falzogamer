@@ -68,7 +68,7 @@ using FalzoGamer.Admin.Areas.Identity.Pages.Account;
             WriteLiteral("\r\n<div class=\"login-box\">\r\n    <div class=\"login-logo\">\r\n        ");
             EndContext();
             BeginContext(229, 68, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "5fd9101030e7411c9c736145a437f859", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "7be569ab8fec4a14ace6ade4925c61b5", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

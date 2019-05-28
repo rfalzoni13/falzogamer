@@ -48,7 +48,6 @@ C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug
 C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.pdb
 C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.Views.dll
 C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\bin\Debug\netcoreapp2.1\FalzoGamer.Admin.Views.pdb
-C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.csprojAssemblyReference.cache
 C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.csproj.CoreCompileInputs.cache
 C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.RazorAssemblyInfo.cache
 C:\Users\renato.falzoni\Documents\Projects\FalzoGamer\FalzoGamer.Admin\obj\Debug\netcoreapp2.1\FalzoGamer.Admin.RazorAssemblyInfo.cs

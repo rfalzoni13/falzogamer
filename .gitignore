@@ -3,21 +3,5 @@
 ################################################################################
 
 /.vs
-/FalzoGamer.Api/bin
-/FalzoGamer.Api/obj
-/FalzoGamer.Admin/bin
-/FalzoGamer.Admin/obj
-/FalzoGamer.Application/bin
-/FalzoGamer.Application/obj
-/FalzoGamer.Cross/bin
-/FalzoGamer.Cross/obj
-/FalzoGamer.Domain/bin
-/FalzoGamer.Domain/obj
-/FalzoGamer.Infra.Data/bin
-/FalzoGamer.Infra.Data/obj
-/FalzoGamer.Infra.Ioc/bin
-/FalzoGamer.Infra.Ioc/obj
-/FalzoGamer.Services/bin
-/FalzoGamer.Services/obj
 /obj
 /FalzoGamer.Api/log.txt
